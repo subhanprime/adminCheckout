@@ -11,9 +11,11 @@ import PostPage from "./layouts/Post/postPage";
 import ReportPage from "./layouts/reports/reportPage";
 import CreateBlog from "./layouts/termsConditions/termsConditions";
 import PrivacyPolicy from "./layouts/privacyPolicy/privacyPolicy";
+import UserReportPage from "./layouts/userReport/userReports";
 function App() {
   return (
     <div>
+      {/* <Headers /> */}
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -26,6 +28,7 @@ function App() {
             <Route path="/report" element={<ReportPage />} />
             <Route path="/termsConditions" element={<CreateBlog />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+            <Route path="/userReport" element={<UserReportPage />} />
           </Route>
         </Route>
       </Routes>

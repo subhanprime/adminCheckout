@@ -209,3 +209,30 @@ export const deleteReport = async (data) => {
     return err?.response;
   }
 };
+
+
+
+export const getAllUserReport = async (data) => {
+  try {
+    const response = await axios.get(`${URL}/api/report/userReport`);
+    if (response) {
+      return response;
+    }
+  } catch (err) {
+    return err?.response;
+  }
+};
+
+export const deleteUserReport = async (data) => {
+  console.log("delete report api", data);
+  try {
+    const response = await axios.delete(`${URL}/api/report/userReport`, {
+      data
+    });
+    if (response) {
+      return response;
+    }
+  } catch (err) {
+    return err?.response;
+  }
+};

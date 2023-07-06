@@ -96,44 +96,7 @@ const PrivacyPolicy = () => {
               Write Privacy Policy Here
             </Typography>
 
-            {/* <Box
-              sx={{
-                display: "flex",
-                // justifyContent: 'space-between',
-                // backgroundColor: '#F3E8FF',
-                bgcolor: `${theme.palette.background.light}`,
-                alignItems: "center",
-                gap: "10px",
-              }}
-              // p={1}
-              mt={2}
-              // mt={1}
-            >
-              <Typography
-                sx={{
-                  fontSize: "18px",
-                  fontWeight: "500",
-                }}
-              >
-                Enter Tittle
-              </Typography>
-              <InputBase
-                sx={{
-                  height: "30px",
-                  width: "100%",
-                  maxWidth: "400px",
-                  border: "none",
-                  outline: "none",
-                  borderRadius: "5px",
-                  boxShadow: "0 0 2px rgba(0,0,0,0.5)",
-                  pl: 1,
-                  color: `${theme.palette.background.primary}`,
-                }}
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Title Here ..."
-              />
-            </Box> */}
+            
           </Box>
           <Box px={1}>
             <ReactQuill
@@ -145,6 +108,7 @@ const PrivacyPolicy = () => {
               onChange={setValue}
               placeholder="Content goes here..."
               height="1000px"
+              width="100%"
               style={{
                 color: `${theme.palette.background.primary}`,
               }}
