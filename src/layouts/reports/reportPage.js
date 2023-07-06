@@ -548,7 +548,7 @@ function ReportPage() {
             minHeight: "500px",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "center",  
           }}
         >
           <Typography
