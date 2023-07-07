@@ -15,6 +15,7 @@ const CheckHeader = () => {
           sx={{
             height: "100vh",
             overflowY: "scroll",
+            width: "100%",
           }}
         >
           <Outlet />

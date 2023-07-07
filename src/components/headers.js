@@ -83,7 +83,8 @@ const Headers = () => {
                       style={({ isActive }) => ({
                         textDecoration: "none",
                         color: isActive ? "#EB3A18" : "#fff",
-                        // background: isActive ? "#7600dc" : "#f0f0f0",
+                        background: isActive ? "#7600dc" : "#f0f0f0",
+                        width:"100%"
                       })}
                     >
                       User
