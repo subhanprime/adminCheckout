@@ -203,15 +203,17 @@ const UserPage = () => {
                 </Typography>
               </TableCell>
               <TableCell align="left">
-                <Typography
-                  sx={{
-                    fontWeight: 700,
-                  }}
-                >
-                  First Name
-                </Typography>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontWeight: 700,
+                    }}
+                  >
+                    Full Name
+                  </Typography>
+                </Box>
               </TableCell>
-              <TableCell align="left">
+              {/* <TableCell align="left">
                 <Typography
                   sx={{
                     fontWeight: 700,
@@ -219,7 +221,7 @@ const UserPage = () => {
                 >
                   Last Name
                 </Typography>
-              </TableCell>
+              </TableCell> */}
               <TableCell align="left">
                 <Typography
                   sx={{
@@ -319,9 +321,11 @@ const UserPage = () => {
                     </Box>
                   </TableCell>
                   <TableCell component="th" scope="row">
-                    {user?.firstName}
+                    <Box>
+                      {user?.firstName} {user?.lastName}
+                    </Box>
                   </TableCell>
-                  <TableCell align="left">{user?.lastName}</TableCell>
+                  {/* <TableCell align="left">{user?.lastName}</TableCell> */}
                   <TableCell align="left">{user?.email}</TableCell>
                   <TableCell align="left">
                     {user?.isVerified ? (
