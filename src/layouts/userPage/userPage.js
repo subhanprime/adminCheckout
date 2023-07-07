@@ -118,11 +118,13 @@ const UserPage = () => {
     return (
       <>
         <Box
-          p={0.5}
+          p={1}
           sx={{
-            backgroundColor: "#F5EFE7",
+            backgroundColor: "#dddddd",
             display: "flex",
             justifyContent: "end",
+            borderRadius: "7px",
+            marginBottom: "5px",
           }}
         >
           <button
@@ -165,11 +167,13 @@ const UserPage = () => {
   return (
     <>
       <Box
-        p={0.5}
+        p={1}
         sx={{
-          backgroundColor: "#F5EFE7",
+          backgroundColor: "#dddddd",
           display: "flex",
           justifyContent: "end",
+          borderRadius: "7px",
+          marginBottom: "5px",
         }}
       >
         <button

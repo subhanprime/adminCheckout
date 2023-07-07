@@ -12,10 +12,11 @@ const Headers = () => {
           // flexDirection: "column",
           // justifyContent: "center",
           // alignItems: "center",
-          height: "100vh",
+          height: "100%",
           minWidth: "250px",
           background: "#69C3F9",
           boxShadow: "0 0 8px rgba(0,0,0,0.1)",
+          borderRadius: "7px",
         }}
       >
         <Box
@@ -64,9 +65,11 @@ const Headers = () => {
                 }}
               >
                 <Box
-                sx={{
-                  // border:"1px solid red"
-                }}
+                  sx={
+                    {
+                      // border:"1px solid red"
+                    }
+                  }
                 >
                   <Typography
                     sx={{
