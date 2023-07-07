@@ -277,6 +277,7 @@ function UserReportPage() {
                             height="50px"
                             style={{
                               //   borderRadius: "50%",
+                              scale: "1.1",
                               objectFit: "cover",
                               border: "1px solid gray",
                               width: "50px",
@@ -453,6 +454,7 @@ function UserReportPage() {
                             height="50px"
                             style={{
                               //   borderRadius: "50%",
+                              scale: "1.1",
                               objectFit: "cover",
                               border: "1px solid gray",
                               width: "50px",

@@ -259,7 +259,7 @@ const Headers = () => {
                     onClick={() => setShortNav(false)}
                     sx={{ cursor: "pointer" }}
                   >
-                    <MenuOpenIcon />
+                    <MenuOpenIcon fontSize="large" />
                   </Typography>
                 </Box>
               </Box>
