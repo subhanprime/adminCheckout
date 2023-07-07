@@ -11,7 +11,12 @@ import { getAllUserReport } from "../../api/api";
 import { Box, Typography } from "@mui/material";
 import post from "../../assets/svg/post.svg";
 import useMakeToast from "../../hooks/makeToast";
-import { deletePost, deleteReport, deleteUser,deleteUserReport } from "../../api/api";
+import {
+  deletePost,
+  deleteReport,
+  deleteUser,
+  deleteUserReport,
+} from "../../api/api";
 import Loading from "../../components/Loading";
 import person from "../../assets/svg/person.svg";
 function UserReportPage() {
@@ -40,8 +45,9 @@ function UserReportPage() {
   }, []);
 
   const deleteUserHandler = async (userId, listId) => {
-    await deleteUserReport({ listId });
-    const response = await deleteUser(userId);
+    // await deleteUserReport({ listId });
+    console.log("userId", userId);
+    const response = await deleteUser({ userId });
     if (response) {
       const newPostList = allReports.filter((el) => el?._id !== listId);
       setAllReports(newPostList);
@@ -429,7 +435,7 @@ function UserReportPage() {
                       </TableCell>
 
                       <TableCell component="th" scope="row">
-                      <Box
+                        <Box
                           sx={{
                             borderRadius: "50%",
                             overflow: "hidden",

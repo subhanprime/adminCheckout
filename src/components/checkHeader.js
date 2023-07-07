@@ -7,6 +7,7 @@ const CheckHeader = () => {
       <Box sx={{ display: "flex" }}>
         <Headers />
         <Box
+          p={0.5}
           sx={{
             height: "100vh",
             overflowY: "scroll",

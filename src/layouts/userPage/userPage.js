@@ -390,7 +390,7 @@ const UserPage = () => {
                     <button
                       style={{
                         padding: "2px 5px",
-                        minWidth: "80px",
+                        minWidth: "90px",
                         border: "none",
                         outline: "none",
                         borderRadius: "4px",
@@ -401,7 +401,7 @@ const UserPage = () => {
                       onClick={() => deleteUserHandler(user?._id)}
                     >
                       <Typography sx={{ fontSize: "14px" }}>
-                        User Delete
+                        Delete User
                       </Typography>
                     </button>
                   </TableCell>
