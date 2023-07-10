@@ -174,15 +174,18 @@ const PostPage = () => {
     // privacyStatus
     // console.log(personName, privacyStatus, textParagraph, baseImage);
     setLoading(true);
+    let fileType = "";
+    if (baseImage.trim() !== "") {
+      fileType = "image";
+    } else fileType = "text";
     const response = await createPost({
       hashtags: personName,
       file: [baseImage],
       privacyStatus,
       text: textParagraph,
-      fileType: "image",
+      fileType,
     });
     if (response?.data?.success) {
-      console.log("response", response);
       makeToast(response?.data?.message, "success", 3);
       setAllPostListArr([response?.data?.post, ...allPostListArr]);
       handleClose();
