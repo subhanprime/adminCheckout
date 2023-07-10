@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-const URL = "https://reactnative-socialapp.up.railway.app";
-// const URL = "http://localhost:5000";
+// const URL = "https://reactnative-socialapp.up.railway.app";
+const URL = "http://localhost:5000";
 
 axios.interceptors.request.use(
   (config) => {

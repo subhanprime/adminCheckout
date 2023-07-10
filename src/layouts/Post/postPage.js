@@ -145,7 +145,7 @@ const PostPage = () => {
     let file = event.target.files[0];
     // console.log("file", file);
     // let files = file.length > 0;
-    if (event.target.files && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+    if (event.target.files && file.name.match(/\.(jpg|jpeg|png|gif|mp4)$/)) {
       setPreview(URL.createObjectURL(file));
       const base64Img = await toBase64(file);
       setBaseImage(base64Img);
@@ -389,23 +389,43 @@ const PostPage = () => {
                   <TableCell align="left">
                     <Box
                       sx={{
-                        borderRadius: "50%",
+                        // borderRadius: "50%",
                         overflow: "hidden",
                         width: "50px",
                         height: "50px",
                       }}
                     >
-                      <img
-                        src={user?.file[0] ? user?.file[0] : post}
-                        width="50px"
-                        height="50px"
-                        style={{
-                          borderRadius: "50%",
-                          objectFit: "cover",
-                          border: "1px solid gray",
-                          width: "50px",
-                        }}
-                      />
+                      {user?.file[0]?.type == "image" ? (
+                        <>
+                          <img
+                            src={
+                              user?.file[0]?.fileKey
+                                ? user?.file[0]?.fileKey
+                                : post
+                            }
+                            width="50px"
+                            height="50px"
+                            style={{
+                              borderRadius: "50%",
+                              objectFit: "cover",
+                              border: "1px solid gray",
+                              width: "50px",
+                            }}
+                          />
+                        </>
+                      ) : (
+                        <>
+                          <video
+                            width="50px"
+                            height="50px"
+                            src={user?.file[0]?.fileKey}
+                            type="video/mp4"
+                            // controls
+                            autoplay
+                            loop
+                          ></video>
+                        </>
+                      )}
                     </Box>
                   </TableCell>
                   <TableCell component="th" scope="row">
@@ -503,7 +523,7 @@ const PostPage = () => {
               ref={fileRef}
               type="file"
               //   style={{ display: "none" }}
-              accept="image/png, image/gif, image/jpeg"
+              accept="image/png, image/gif, image/jpeg, video/mp4"
               onChange={ImageHandle}
             />
           </Box>
