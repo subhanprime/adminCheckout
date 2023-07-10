@@ -94,6 +94,7 @@ const PostPage = () => {
   const [privacyStatus, setPrivacyStatus] = useState("anyone");
   const [open, setOpen] = useState(false);
   const [baseImage, setBaseImage] = useState("");
+  const [fileType, setFileType] = useState("text");
   const [textParagraph, setTextParagraph] = useState("");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -143,9 +144,15 @@ const PostPage = () => {
 
   const ImageHandle = async (event) => {
     let file = event.target.files[0];
-    // console.log("file", file);
+    console.log("file", file);
     // let files = file.length > 0;
     if (event.target.files && file.name.match(/\.(jpg|jpeg|png|gif|mp4)$/)) {
+      if (file?.type === "video/mp4") {
+        setFileType("video");
+      } else {
+        setFileType("image");
+      }
+
       setPreview(URL.createObjectURL(file));
       const base64Img = await toBase64(file);
       setBaseImage(base64Img);
@@ -174,13 +181,13 @@ const PostPage = () => {
     // privacyStatus
     // console.log(personName, privacyStatus, textParagraph, baseImage);
     setLoading(true);
-    let fileType = "";
-    if (baseImage.trim() !== "") {
-      fileType = "image";
-    } else fileType = "text";
+    // let fileType = "";
+    // if (baseImage !== "") {
+    //   setFileType("text");
+    // }
     const response = await createPost({
       hashtags: personName,
-      file: [baseImage],
+      file: baseImage ? [baseImage] : [],
       privacyStatus,
       text: textParagraph,
       fileType,
@@ -398,11 +405,12 @@ const PostPage = () => {
                         height: "50px",
                       }}
                     >
-                      {user?.file[0]?.type == "image" ? (
+                      {user?.file.length == 0 ||
+                      user?.file[0]?.type === "image" ? (
                         <>
                           <img
                             src={
-                              user?.file[0]?.fileKey
+                              user?.file && user?.file[0]?.fileKey
                                 ? user?.file[0]?.fileKey
                                 : post
                             }
