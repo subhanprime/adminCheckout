@@ -447,12 +447,26 @@ const PostPage = () => {
                         textOverflow: "ellipsis",
                       }}
                     >
-                      {user?.text}
+                      {user?.text ? (
+                        <>{user?.text}</>
+                      ) : (
+                        <Typography sx={{ fontSize: "14px", color: "red" }}>
+                          Not Provide
+                        </Typography>
+                      )}
                     </Box>
                   </TableCell>
                   <TableCell align="left">
-                    {user?.author?.firstName}&nbsp;
-                    {user?.author?.lastName}
+                    {user?.author?.firstName ? (
+                      <>
+                        {user?.author?.firstName}&nbsp;
+                        {user?.author?.lastName}f
+                      </>
+                    ) : (
+                      <Typography sx={{ fontSize: "14px", color: "red" }}>
+                        Not Provide
+                      </Typography>
+                    )}
                   </TableCell>
                   {/* <TableCell align="right">{row.fat}</TableCell> */}
                   <TableCell align="left">
