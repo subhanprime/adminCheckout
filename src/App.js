@@ -12,6 +12,7 @@ import ReportPage from "./layouts/reports/reportPage";
 import CreateBlog from "./layouts/termsConditions/termsConditions";
 import PrivacyPolicy from "./layouts/privacyPolicy/privacyPolicy";
 import UserReportPage from "./layouts/userReport/userReports";
+import VerifiedDocs from "./layouts/verifyDocs/verifiedDocs";
 function App() {
   return (
     <div>
@@ -29,6 +30,7 @@ function App() {
             <Route path="/termsConditions" element={<CreateBlog />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/userReport" element={<UserReportPage />} />
+            <Route path="/verified-docs" element={<VerifiedDocs />} />
           </Route>
         </Route>
       </Routes>

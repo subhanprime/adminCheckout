@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-// const URL = "https://reactnative-socialapp.up.railway.app";
-const URL = "http://localhost:5000";
+const URL = "https://reactnative-socialapp.up.railway.app";
+// const URL = "http://localhost:5000";
 
 axios.interceptors.request.use(
   (config) => {
@@ -200,7 +200,7 @@ export const deleteReport = async (data) => {
   console.log("delete report api", data);
   try {
     const response = await axios.delete(`${URL}/api/report/submitReport`, {
-      data
+      data,
     });
     if (response) {
       return response;
@@ -209,8 +209,6 @@ export const deleteReport = async (data) => {
     return err?.response;
   }
 };
-
-
 
 export const getAllUserReport = async (data) => {
   try {
@@ -227,8 +225,31 @@ export const deleteUserReport = async (data) => {
   console.log("delete report api", data);
   try {
     const response = await axios.delete(`${URL}/api/report/userReport`, {
-      data
+      data,
     });
+    if (response) {
+      return response;
+    }
+  } catch (err) {
+    return err?.response;
+  }
+};
+
+export const getAllIdentificationReq = async () => {
+  try {
+    const response = await axios.get(`${URL}/api/user/identify-docs`);
+    if (response) {
+      return response;
+    }
+  } catch (err) {
+    return err?.response;
+  }
+};
+
+
+export const verifyDocument = async (data) => {
+  try {
+    const response = await axios.post(`${URL}/api/user/approve-identify-docs`,data);
     if (response) {
       return response;
     }

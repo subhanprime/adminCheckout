@@ -5,11 +5,12 @@ import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
-import WysiwygIcon from '@mui/icons-material/Wysiwyg';
-import ReportIcon from '@mui/icons-material/Report';
-import PersonOffIcon from '@mui/icons-material/PersonOff';
-import GavelIcon from '@mui/icons-material/Gavel';
-import PolicyIcon from '@mui/icons-material/Policy';
+import WysiwygIcon from "@mui/icons-material/Wysiwyg";
+import ReportIcon from "@mui/icons-material/Report";
+import PersonOffIcon from "@mui/icons-material/PersonOff";
+import GavelIcon from "@mui/icons-material/Gavel";
+import PolicyIcon from "@mui/icons-material/Policy";
+import VerifiedIcon from "@mui/icons-material/Verified";
 const Headers = () => {
   const [shortNav, setShortNav] = useState(false);
 
@@ -99,9 +100,6 @@ const Headers = () => {
             </NavLink>
           </Box>
 
-
-
-
           <Box
             mb={1}
             sx={{
@@ -124,8 +122,6 @@ const Headers = () => {
               <ReportIcon fontSize="large" />
             </NavLink>
           </Box>
-
-
 
           <Box
             mb={1}
@@ -150,7 +146,6 @@ const Headers = () => {
             </NavLink>
           </Box>
 
-
           <Box
             mb={1}
             sx={{
@@ -174,8 +169,6 @@ const Headers = () => {
             </NavLink>
           </Box>
 
-
-
           <Box
             mb={1}
             sx={{
@@ -196,6 +189,29 @@ const Headers = () => {
               })}
             >
               <PolicyIcon fontSize="large" />
+            </NavLink>
+          </Box>
+
+          <Box
+            mb={1}
+            sx={{
+              color: "white",
+              display: "flex",
+              justifyContent: "center",
+              cursor: "pointer",
+            }}
+          >
+            <NavLink
+              to="/verified-docs"
+              style={({ isActive }) => ({
+                textDecoration: "none",
+                color: isActive ? "#EB3A18" : "#fff",
+                // background: isActive ? "#7600dc" : "#f0f0f0",
+                // width: "100%",
+                // display
+              })}
+            >
+              <VerifiedIcon fontSize="large" />
             </NavLink>
           </Box>
         </Box>
@@ -389,6 +405,25 @@ const Headers = () => {
                     })}
                   >
                     Privacy Policy
+                  </NavLink>
+                </Typography>
+
+                <Typography
+                  sx={{
+                    fontSize: "18px",
+                    fontWeight: "500",
+                    cursor: "pointer",
+                  }}
+                >
+                  <NavLink
+                    to="/verified-docs"
+                    style={({ isActive }) => ({
+                      textDecoration: "none",
+                      color: isActive ? "#EB3A18" : "#fff",
+                      // background: isActive ? "#7600dc" : "#f0f0f0",
+                    })}
+                  >
+                    Verify Document
                   </NavLink>
                 </Typography>
               </Box>
