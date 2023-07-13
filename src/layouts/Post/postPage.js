@@ -460,7 +460,7 @@ const PostPage = () => {
                     {user?.author?.firstName ? (
                       <>
                         {user?.author?.firstName}&nbsp;
-                        {user?.author?.lastName}f
+                        {user?.author?.lastName}
                       </>
                     ) : (
                       <Typography sx={{ fontSize: "14px", color: "red" }}>
